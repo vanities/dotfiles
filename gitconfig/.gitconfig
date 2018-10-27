@@ -1,0 +1,6 @@
+[user]
+    email = mischkeaa@gmail.com
+    name = Adam Mischke
+    username = vanities
+[core]
+    editor = nvim

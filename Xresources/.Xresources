@@ -1,0 +1,70 @@
+!rxvt -fn "xft:Inconsolata-dz:pixelsize=12,style=dz"
+! Using Xft
+!uRxvt*font:           xft:Inconsolata:size=14:antialias=true:
+!
+!URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+
+!URxvt.font: xft:Inconsolata\ for\ Powerline:pixelsize=14:antialias=true
+!
+URxvt.font: xft:InconsolataForPowerline\ Nerd\ Font:pixelsize=15:antialias=true:hinting=true, xft:Wuncon\ Siji:pixelsize=13
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+URxvt.secondaryWheel: 1
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+
+URXvt.clipboard.autocopy: true
+
+
+
+! dpi tricks
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.autohint:   false
+Xft.lcdfilter:  lcddefault
+
+!colors
+*.foreground:   #c2c2b0
+*.background:   #181818
+*.cursorColor:  #c2c2b0
+! black
+*.color0:       #111111
+*.color8:       #7F7F7F
+! red
+*.color1:       #aa4450
+*.color9:       #ff6a6a
+! yellow
+*.color3:       #719611
+*.color11:      #b1d631
+! green
+*.color2:       #cc8800
+*.color10:      #ff9800
+! blue
+*.color4:       #6688aa
+*.color12:      #90b0d1
+! cyan
+*.color6:       #8f6f8f
+*.color14:      #8181a6
+! magenta
+*.color5:       #528b8b
+*.color13:      #87ceeb
+! white
+*.color7:       #d3d3d3
+*.color15:      #c1cdc1
+! stylized
+*.colorIT:      #719611
+*.colorBD:      #d3d3d3
+*.colorUL: 	#528b8b

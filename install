@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "installing dotfiles"
+cp bspwm/bspwmrc ~/.config/bspwm
+cp sxhkd/sxhkdrc ~/.config/sxhkd
+cp nvim/init.vim ~/.config/nvim
+
+cp -r polybar ~/.config
+
+cp gitconfig/.gitconfig ~/
+cp xinitrc/.xinitrc ~/
+cp Xresources/.Xresources ~/
+cp zshrc/.zshrc ~/
+echo "done."

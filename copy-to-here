@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cp -ur ~/.xinitrc ./xinitrc/
+cp ~/.Xresources ./Xresources/
+cp -r ~/.config/i3/* ./i3/
+cp -r ~/.config/bspwm/* ./bspwm/
+cp ~/.gitconfig ./gitconfig/
+cp -r ~/.config/lemonbar/* ./lemonbar/
+cp -r ~/.config/nvim/* ./nvim/
+cp ~/.xbindkeysrc ./xbindkeysrc/
+cp -r ~/.config/cmus/* ./cmus/
+cp -ru ~/.config/polybar/* ./polybar/
+cp -r ~/.config/sxhkd/* ./sxhkd/
+cp ~/.zshrc ./zshrc/
