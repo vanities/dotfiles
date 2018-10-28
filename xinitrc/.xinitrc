@@ -1,3 +1,4 @@
+compton &
 sxhkd &
 $HOME/.config/polybar/launch.sh &
 
