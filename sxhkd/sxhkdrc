@@ -1,28 +1,16 @@
-#
-#
 # wm independent hotkeys
-#
 
 # terminal emulator
 super + Return
-	urxvt
+    alacritty
 
 # program launcher
-super + d
+super + space
 	dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
-
-#
-# bspwm hotkeys
-#
-# open a "scratchpad" terminal (quake-style, in this case, on a 1366x768 display)
-# F12
-#  xdotool search --onlyvisible --classname URxvtQuake windowunmap \
-#    || xdotool search --classname URxvtQuake windowmap \
-#    || urxvt -name URxvtQuake -geometry 110x20+297+1
 
 F12
     tdrop -a -w 1362 -y 14 -s dropdown urxvt
@@ -43,10 +31,6 @@ super + f
 super + y
 	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
 
-# swap the current node and the biggest node
-#   super + g
-#   	bspc node -s biggest
-
 #
 # state/flags
 #
@@ -64,7 +48,7 @@ super + ctrl + {x,y,z}
 #
 
 # focus the node in the given direction
-super +  {_,shift + }{Left,Down,Up,Right}
+super +  {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
@@ -76,7 +60,7 @@ super +  {_,shift + }{Left,Down,Up,Right}
 #	bspc node -f {next,prev}
 
 # focus the next/previous desktop
-super +  {_,shift  + }{Left,Right}
+super +  {_,shift  + }{h,l}
 	bspc desktop -f {prev,next}
 
 # focus the last node/desktop
@@ -98,16 +82,12 @@ super + {_,shift + }{1-9,0}
 #
 
 # expand the tiled space in the given direction
-# super + alt + {h,j,k,l}
-#	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+super + alt + {h,j,k,l}
+    bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
 
 # contract the tiled space in the given direction
-# super + alt + shift + {h,j,k,l}
-#	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
-
-# move a floating window
-# super + {Left,Down,Up,Right}
-#	xdo move {-x -20,-y +20,-y -20,-x +20}
+super + alt + shift + {h,j,k,l}
+    bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
 
 #
 # pointer focus/move/resize
@@ -126,24 +106,11 @@ super + @button{1-3}
 	bspc pointer -u
 
 # Adjust volume
-# me, vol up and down	
-#super + {-,+}
-#	amixer set Master 1000{-,+} unmute
-# Fine adjust volume
-#ctrl + {F9,F10}
-#amixer set Master 100{-,+} unmute
-
-
-
 XF86AudioRaiseVolume
      amixer -q set Master 2dB+ unmute
-	
 	
 XF86AudioMute
     amixer -q set Master toggle
 
 XF86AudioLowerVolume
     amixer -q set Master 2dB- unmute
-
-#X86LightBulb
-    
