@@ -28,7 +28,7 @@ For Arch users, make sure you install these first:<br>
 `git clone https://aur.archlinux.org/redshift-git.git ` 
 * <a href="https://aur.archlinux.org/packages/tmux-git/">tmux-git</a></s><br>
 `git clone https://aur.archlinux.org/tmux-git.git ` 
-* <a href="https://aur.archlinux.org/packages/tmux-git/">tmux-git</a></s><br>
+* <a href="https://aur.archlinux.org/packages/alacritty-git/">alacritty-git</a></s><br>
 `git clone https://aur.archlinux.org/alacritty-git.git `
 * <a href="https://aur.archlinux.org/packages/compton-git/">compton-git</a></s><br>
 `git clone https://aur.archlinux.org/compton-git.git `
