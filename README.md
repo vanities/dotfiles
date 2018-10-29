@@ -32,7 +32,9 @@ For Arch users, make sure you install these first:<br>
 `git clone https://aur.archlinux.org/alacritty-git.git `
 * <a href="https://aur.archlinux.org/packages/compton-git/">compton-git</a></s><br>
 `git clone https://aur.archlinux.org/compton-git.git `
-
+* <a href="https://aur.archlinux.org/packages/zsh-theme-powerlevel9k-git/">zsh-theme-powerlevel9k-git
+</a></s><br>
+`git clone https://aur.archlinux.org/zsh-theme-powerlevel9k-git.git `
 
 ## Install
 run `./install`
