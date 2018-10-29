@@ -18,8 +18,6 @@ For Arch users, make sure you install these first:<br>
 `git clone https://aur.archlinux.org/oh-my-zsh-git.git`
 * <a href="https://aur.archlinux.org/packages/polybar-git/">polybar-git</a></s><br>
 `git clone https://aur.archlinux.org/polybar-git.git` 
-* <a href="https://aur.archlinux.org/packages/neovim-git/">neovim-git</a></s><br>
-`git clone https://aur.archlinux.org/neovim-git.git` 
 * <a href="https://aur.archlinux.org/packages/neovim-plug-git/">neovim-plug-git</a></s><br>
 `gclone https://aur.archlinux.org/neovim-plug-git.git` 
 * <a href="https://aur.archlinux.org/packages/nerd-fonts-complete/">nerd-fonts-complete</a></s><br>
