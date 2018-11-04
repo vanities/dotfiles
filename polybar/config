@@ -1,5 +1,6 @@
 [bar/top]
-monitor = DP-2
+# xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = HDMI-2
 width = 100%
 height = 34
 
