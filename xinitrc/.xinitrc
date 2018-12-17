@@ -4,6 +4,6 @@ $HOME/.config/polybar/launch.sh &
 
 redshift -l 35.845621:-86.390270 &
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
-feh --randomize --bg-fill ~/Downloads/pics/* &
+feh --randomize --bg-fill ~/Downloads/wallpapers/* &
 
 exec bspwm

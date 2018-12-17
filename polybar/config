@@ -190,11 +190,11 @@ label-connected = %essid%
 label-disconnected =    not connected
 label-disconnected-foreground = #66
 
-ramp-signal-0 = 睊 MIN
-ramp-signal-1 = 直 LOW
-ramp-signal-2 = 直 MED
-ramp-signal-3 = 直 HI
-ramp-signal-4 = 直 MAX
+ramp-signal-0 = 睊 
+ramp-signal-1 = 直 
+ramp-signal-2 = 直 
+ramp-signal-3 = 直 
+ramp-signal-4 = 直 
 
 label-font = 0
 animation-packetloss-0 = 
@@ -224,7 +224,7 @@ type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-label-connected = %{T3}%%{F#4CAF50}%local_ip%%{T-}
+label-connected = %{F#4CAF50}%local_ip%
 label-disconnected-foreground = #66
 
 [module/alsa]
