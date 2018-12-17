@@ -10,80 +10,142 @@ foreground = #ccffffff
 line-color = background
 line-size = 16
 
-spacing = 1
-padding-right = 2
-module-margin = 2
+spacing = 0.5
+padding-right = 1
+module-margin = 1
 
-font-0 = Inconsolata\ Nerd\ Font\ Complete:style=Medium
+font-0 = Inconsolata Nerd Font:size=15
+font-1 = Wuncon Siji:pixelsize=8
+font-2 = FuraMono Nerd Font Mono:size=15
 
-modules-left = powermenu bspwm
+modules-left = powermenu
 modules-center = xwindow
-modules-right = cpu memory alsa wireless-network wired-network date
+modules-right = alsa wireless-network wired-network date
+
+[bar/bottom]
+monitor = HDMI-2
+bottom = true
+width = 100%
+height = 27
+
+background = ${bar/top.background}
+foreground = ${bar/top.foreground}
+
+line-color = ${bar/top.background}
+line-size = 2
+
+spacing = 3
+padding-right = 1
+padding-left = 1
+module-margin-left = 0
+module-margin-right = 6
+
+font-0 = Inconsolata Nerd Font:size=15
+font-1 = Wuncon Siji:pixelsize=8
+font-2 = FuraMono Nerd Font Mono:size=15
+
+modules-left = bspwm
+modules-right = cpu memory
 
 [module/bspwm]
 type = internal/bspwm
 
 ws-icon-0 = term;
-ws-icon-1 = web;
+ws-icon-1 = web;
 ws-icon-2 = code;
 ws-icon-3 = music;
-ws-icon-4 = irssi;
+ws-icon-4 = chat;
+ws-icon-5 = vm;
 ws-icon-default = 
 
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(focused|urgent|occupied|empty)>
+;   <label-mode> - gets replaced with <label-(monocle|tiled|fullscreen|floating|locked|sticky|private)>
+; Default: <label-state>
 format = <label-state> <label-mode>
 
-label-dimmed-underline = ${root.background}
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
 
+; If any values for label-dimmed-N are defined, the workspace/mode
+; colors will get overridden with those values if the monitor is out of focus
+; To only override workspaces in a specific state, use:
+;   label-dimmed-focused
+;   label-dimmed-occupied
+;   label-dimmed-urgent
+;   label-dimmed-empty
+label-dimmed-foreground = #555
+label-dimmed-underline = ${bar/bottom.background}
+label-dimmed-focused-background = #f00
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
 label-focused = %icon%
-label-focused-foreground = #fff
-label-focused-background = #773f3f3f
-label-focused-underline = #c9665e
-label-focused-font = 0
-label-focused-padding = 4
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
 
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
 label-occupied = %icon%
-label-occupied-foreground = #dd
-label-occupied-underline = #666
-label-occupied-font = 0
-label-occupied-padding = 4
+label-occupied-underline = #555555
 
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
 label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
-label-urgent-font = 0
-label-urgent-padding = 4
 
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
 label-empty = %icon%
 label-empty-foreground = #55
-label-empty-font = 0
-label-empty-padding = 4
 
-label-monocle = mon
-label-monocle-underline = ${module/bspwm.label-focused}
-label-monocle-background = #33ffffff
-label-monocle-padding = 2
+; The following labels will be used to indicate the layout/mode
+; for the focused workspace. Requires <label-mode>
+;
+; Available tokens:
+;   None
+;label-monocle = 
+;label-tiled = 
+;label-fullscreen = 
+;label-floating = 
+;label-pseudotiled = P
+;label-locked = 
+;label-locked-foreground = #bd2c40
+;label-sticky = 
+;label-sticky-foreground = #fba922
+;label-private = 
+;label-private-foreground = #bd2c40
 
-label-locked = lock
-label-locked-foreground = #bd2c40
-label-locked-underline = ${module/bspwm.label-monocle-underline} label-locked-padding = ${module/bspwm.label-monocle-padding}
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 2
+label-separator-foreground = #ffb52a
 
-label-sticky = stick
-label-sticky-foreground = #fba922
-label-sticky-underline = ${module/bspwm.label-monocle-underline}
-label-sticky-padding = ${module/bspwm.label-monocle-padding}
-
-label-private = priv
-label-private-foreground = #bd2c40
-label-private-underline = ${module/bspwm.label-monocle-underline}
-label-private-padding = ${module/bspwm.label-monocle-padding}
 
 [module/bspwm-tmp]
 type = internal/bspwm
 format = <label-state>
 
-label-focused = 
-label-focused-padding = 1
+label-active = 
+label-active-padding = 1
 label-occupied = 
 label-occupied-padding = 1
 label-empty = 
@@ -93,56 +155,29 @@ label-empty-padding = 1
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU
+label = CPU %percentage%%
 
+ramp-coreload-spacing = 1
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 0
 ramp-coreload-0-foreground = #aaff77
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 0
 ramp-coreload-1-foreground = #aaff77
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 0
 ramp-coreload-2-foreground = #aaff77
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 0
 ramp-coreload-3-foreground = #aaff77
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 0
 ramp-coreload-4-foreground = #fba922
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 0
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 0
 ramp-coreload-6-foreground = #ff5555
 ramp-coreload-7 = █
-ramp-coreload-7-font = 0
 ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
-date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
-
-[module/memory]
-type = internal/memory
-format = <label> <bar-used>
-label = RAM
-
-bar-used-width = 20
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 0
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 0
-bar-used-empty = ─
-bar-used-empty-font = 0
-bar-used-empty-foreground = #444444
+date = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 
 [module/wireless-network]
 type = internal/network
@@ -155,11 +190,11 @@ label-connected = %essid%
 label-disconnected =    not connected
 label-disconnected-foreground = #66
 
-ramp-signal-0 = 睊MIN
-ramp-signal-1 = 直LOW
-ramp-signal-2 = 直MED
-ramp-signal-3 = 直HI
-ramp-signal-4 = 直MAX
+ramp-signal-0 = 睊 MIN
+ramp-signal-1 = 直 LOW
+ramp-signal-2 = 直 MED
+ramp-signal-3 = 直 HI
+ramp-signal-4 = 直 MAX
 
 label-font = 0
 animation-packetloss-0 = 
@@ -168,12 +203,28 @@ animation-packetloss-1 = 
 animation-packetloss-1-foreground = ${bar/top.foreground}
 animation-packetloss-framerate = 500
 
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM %gb_used%/%gb_free%
+
+bar-used-width = 30
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-empty = ─
+bar-used-empty-foreground = #444444
+
 [module/wired-network]
 type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-label-connected =    %{T3}%local_ip%%{T-}
+label-connected = %{T3}%local_ip%%{T-}
 label-disconnected-foreground = #66
 
 [module/alsa]
@@ -219,30 +270,32 @@ type = custom/menu
 
 format-padding = 1
 
-label-open = menu
+label-open =  vanities
 label-close = close
+label-separator = |
+expand-right = true
 
-menu-0-0 = Terminate WM
+menu-0-0 = Terminate WM 
 menu-0-0-foreground = #fba922
 menu-0-0-exec = bspc quit -1
-menu-0-1 = Reboot
+menu-0-1 = Reboot 
 menu-0-1-foreground = #fba922
 menu-0-1-exec = menu_open-1
-menu-0-2 = Power off
+menu-0-2 = Power off 
 menu-0-2-foreground = #fba922
 menu-0-2-exec = menu_open-2
 
-menu-1-0 = Cancel
+menu-1-0 = Cancel 
 menu-1-0-foreground = #fba922
 menu-1-0-exec = menu_open-0
-menu-1-1 = Reboot
+menu-1-1 = Reboot 
 menu-1-1-foreground = #fba922
 menu-1-1-exec = sudo reboot
 
-menu-2-0 = Power off
+menu-2-0 = Power off 
 menu-2-0-foreground = #fba922
 menu-2-0-exec = sudo poweroff
-menu-2-1 = Cancel
+menu-2-1 = Cancel 
 menu-2-1-foreground = #fba922
 menu-2-1-exec = menu_open-0
 
