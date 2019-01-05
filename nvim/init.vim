@@ -62,7 +62,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/vimproc.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'w0rp/ale'
-" Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 call plug#end()
 

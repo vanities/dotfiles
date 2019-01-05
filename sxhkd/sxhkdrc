@@ -82,12 +82,12 @@ super + {_,shift + }{1-9,0}
 #
 
 # expand the tiled space in the given direction
-super + alt + {h,j,k,l}
-    bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+shift + alt + {h,j,k,l}
+    bspc node {@west -r -50,@south -r +50,@north -r -50,@east -r +50}
 
 # contract the tiled space in the given direction
-super + alt + shift + {h,j,k,l}
-    bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+ctrl + shift + alt + {h,j,k,l}
+    bspc node {@east -r -50,@north -r +50,@south -r -50,@west -r +50}
 
 #
 # pointer focus/move/resize

@@ -1,5 +1,5 @@
 ! font
-URxvt.font: xft:InconsolataForPowerline\ Nerd\ Font:pixelsize=15:antialias=true:hinting=true, xft:Wuncon\ Siji:pixelsize=13
+URxvt.font: xft:Inconsolata\ Nerd\ Font\ Complete:pixelsize=15:antialias=true:hinting=true, xft:Wuncon\ Siji:pixelsize=13
 
 ! scroll wheel
 URxvt.secondaryScreen: 1
