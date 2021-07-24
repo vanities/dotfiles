@@ -1,0 +1,22 @@
+#!/bin/bash
+SESSION=work
+
+tmux -2 new-session -d -s $SESSION
+
+tmux new-window -t $SESSION:0 -n 'os'
+tmux send-keys "cd ~/git/work/minary" C-m
+
+tmux new-window -t $SESSION:1 -n 'os'
+tmux send-keys "cd ~/git/work/minary" C-m
+
+tmux new-window -t $SESSION:2 -n 'api'
+tmux send-keys "cd ~/git/work/minary-api-django" C-m
+
+tmux new-window -t $SESSION:3 -n 'fff-firebase'
+tmux send-keys "cd ~/git/work/funfunfun-firebase" C-m
+
+tmux new-window -t $SESSION:4 -n 'fff-ios'
+tmux send-keys "cd ~/git/work/funfunfun-ios" C-m
+
+tmux select-window -t $SESSION:0
+tmux -2 attach-session -t $SESSION

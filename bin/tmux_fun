@@ -1,0 +1,22 @@
+#!/bin/bash
+SESSION=fun
+
+tmux -2 new-session -d -s $SESSION
+
+tmux new-window -t $SESSION:0 -n 'fun'
+tmux send-keys "cd ~/git/fun" C-m
+
+tmux new-window -t $SESSION:1 -n 'bitchan'
+tmux send-keys "cd ~/git/fun/bitchan" C-m
+
+tmux new-window -t $SESSION:2 -n 'bitchan2'
+tmux send-keys "cd ~/git/fun/bitchan" C-m
+
+tmux new-window -t $session:3 -n 'vidya'
+tmux send-keys "cd ~/git/fun/vidya" c-m
+
+tmux new-window -t $session:4 -n 'swiftchan'
+tmux send-keys "cd ~/git/fun/swiftchan" c-m
+
+tmux select-window -t $SESSION:0
+tmux -2 attach-session -t $SESSION

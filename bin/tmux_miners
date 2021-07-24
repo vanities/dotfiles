@@ -1,0 +1,34 @@
+#!/bin/bash
+SESSION=miners
+
+tmux -2 new-session -d -s $SESSION
+
+tmux new-window -t $SESSION:0 -n 'test'
+tmux send-keys "ssh test" C-m
+
+tmux new-window -t $SESSION:1 -n 'stag'
+tmux send-keys "ssh stag" C-m
+
+tmux new-window -t $SESSION:2 -n 'prod'
+tmux send-keys "ssh prod" C-m
+
+tmux new-window -t $SESSION:3 -n 'big'
+tmux send-keys "ssh big" C-m
+
+tmux new-window -t $SESSION:4 -n '2big'
+tmux send-keys "ssh 2big" C-m
+
+tmux new-window -t $SESSION:5 -n '5700'
+tmux send-keys "ssh 5700" C-m
+
+tmux new-window -t $SESSION:6 -n 'pc'
+tmux send-keys "ssh pc" C-m
+
+tmux new-window -t $SESSION:7 -n 'pi'
+tmux send-keys "ssh pi" C-m
+
+tmux new-window -t $SESSION:8 -n 'pi2'
+tmux send-keys "ssh pi2" C-m
+
+tmux select-window -t $SESSION:0
+tmux -2 attach-session -t $SESSION

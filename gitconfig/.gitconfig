@@ -1,11 +1,14 @@
 [user]
-    email = mischkeaa@gmail.com
-    name = Adam Mischke
-    username = vanities
+	email = mischkeaa@gmail.com
+	name = Adamant Mischke
+	signingkey = C02AF6F1096F20B4
 [core]
-    editor = nvim
-[push]
-	default = matching
+	editor = nvim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[credential]
+	helper = osxkeychain
 [color]
 	ui = auto
 [color "branch"]
@@ -227,4 +230,11 @@
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
 	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
-    human = name-rev --name-only --refs=refs/heads/*
+	human = name-rev --name-only --refs=refs/heads/*
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[commit]
+	gpgsign = true

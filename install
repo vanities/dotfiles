@@ -7,6 +7,7 @@ cp alacritty/alacritty.yml ~/.config/alacritty
 cp -r nvim/* ~/.config/nvim
 cp tmux/.tmux.conf ~/
 cp compton/.compton.conf ~/.config
+cp -r fish ~/.config
 
 cp -r polybar ~/.config
 
